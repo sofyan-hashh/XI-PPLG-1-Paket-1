@@ -88,6 +88,15 @@ if(! isset($_SESSION['user'])) {
                      <li class="active">
                         <a href="?page=ulasan"  aria-expanded="false"><i class="fa fa-comments purple_color2"></i> <span>Ulasan</span></a>
                      </li>
+                     <?php
+                     if($_SESSION['user']['level'] !='peminjam'){ 
+                     ?>
+                     <li class="active">
+                        <a href="?page=laporan"  aria-expanded="false"><i class="fa fa-book purple_color"></i> <span>Laporan Peminjaman</span></a>
+                     </li>
+                     <?php
+                        }
+                        ?>
                   </ul>
                </div>
             </nav>

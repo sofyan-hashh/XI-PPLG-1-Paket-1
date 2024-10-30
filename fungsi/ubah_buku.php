@@ -15,7 +15,7 @@
                             $penerbit = $_POST['penerbit'];
                             $tahun_terbit = $_POST['tahun_terbit'];
                             $deskripsi = $_POST['deskripsi'];
-                            $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi) VALUES('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
+                            $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi' WHERE id_buku=$id");
 
                             if($query) {
                                 echo '<script>alert("Oke sip.");</script>';
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-2">Deskripsi</div>
-                        <div class="col-md-8"><textarea name="deskripsi" value="<?php echo $data['deskripsi']; ?>" rows="5" class="form-control"></textarea></div>
+                        <div class="col-md-8"><textarea name="deskripsi" rows="5" class="form-control"><?php echo $data['deskripsi']; ?></textarea></div>
                     </div>
                     <div class="row">
                         <div class="col-md-2"></div>
