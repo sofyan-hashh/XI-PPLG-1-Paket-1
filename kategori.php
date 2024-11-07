@@ -32,8 +32,8 @@
                                             <td><?php echo $i++; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td>
-                                                <a class="btn cur-p btn-secondary" href="?page=fungsi/ubah_kategori&&id=<?php echo $data['id_kategori']; ?>">Ubah</a>
-                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn cur-p btn-danger" href="?page=fungsi/hapus_kategori&&id=<?php echo $data['id_kategori']; ?>">Hapus</a>
+                                                <a class="btn btn-info fa fa-edit" href="?page=fungsi/ubah_kategori&&id=<?php echo $data['id_kategori']; ?>"></a>
+                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn btn-danger fa fa-trash" href="?page=fungsi/hapus_kategori&&id=<?php echo $data['id_kategori']; ?>"></a>
                                             </td>
                                           </tr>
                                           <?php

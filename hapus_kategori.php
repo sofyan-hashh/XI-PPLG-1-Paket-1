@@ -2,7 +2,7 @@
 $id = $_GET['id'];
 $query = mysqli_query($koneksi, "DELETE * FROM kategori WHERE id_kategori=$id");
 ?>
-  <script>
+ <script>
     alert('aja nyesel yahhh');
     location.href = "index.php?page=kategori";
  </script>

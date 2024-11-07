@@ -6,18 +6,18 @@ require 'fungsi/koneksi.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrasi ke Perpustakaan Digital</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="aset/css/style.css">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="aset/css/login.css">
 </head>
 <body class="bg-light">
 
-<div class="container">
-    <div class="row justify-content-center" style="height: 100vh;">
-        <div class="col-md-4">
-            <div class="card mt-5">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Daftar akun</h5>
+                    <h3 class="text-center">Register</h3>
                     <?php
                         if( isset($_POST['register'])) {
                             $nama = $_POST['nama'];
@@ -41,49 +41,47 @@ require 'fungsi/koneksi.php';
                     ?>
                     <form method="post">
                         <div class="mb-3">
-                            <label class="form-label">Nama Lengkap</label>
-                            <input type="nama" required class="form-control" name="nama" placeholder="Nama Lengkap..." />
+                            <label for="fullName" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" name="nama" required placeholder="masukkaan nama lengkap anda...">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" required class="form-control" name="email" placeholder="Email..." />
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" name="email" required placeholder="Email...">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">No Telepon</label>
-                            <input type="no_telepon" required class="form-control" name="no_telepon" placeholder="No Telepon..." />
+                            <label for="phone" class="form-label">No Telepon</label>
+                            <input type="number" class="form-control" name="no_telepon" required placeholder="No Telepon...">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Alamat</label>
-                            <textarea name="alamat" required class="form-control" placeholder="alamat..."></textarea>
+                            <label for="address" class="form-label">Alamat</label>
+                            <textarea type="text" class="form-control" name="alamat" rows="5" placeholder="Alamat Lengkap..."></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Username</label>
-                            <input type="username" required class="form-control" name="username" placeholder="Username..." />
+                            <label for="registerPassword" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" required placeholder="Username...">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" required class="form-control" id="password" name="password" placeholder="Password...">
-                        </div>
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" required placeholder="Password...">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Daftar Sebagai</label>
-                            <select class="form-select" aria-label="Default select example">
-                                 <option value="admin">admin</option>
-                                 <option value="peminjam">peminjam</option>
+                            <label for="userRole" class="form-label">Role</label>
+                            <select class="form-select" name="level" required>
+                                <option value="" disabled selected>Pilih role</option>
+                                <option value="admin">Admin</option>
+                                <option value="peminjam">Peminjam</option>
                             </select>
                         </div>
-                        <button type="submit" name="register" value="register" class="btn btn-primary w-100">Daftar</button>
+                        <button type="submit" name="register" value="register" class="btn btn-primary w-100">Register</button>
                     </form>
-                    <div class="text-center mt-3">
-                        <p>Sudah punya akun?<a href="login.php">Login</a></p>
-                    </div>
+                    <p class="mt-3 text-center">Already have an account? <a href="login.php">Login</a></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="aset/js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

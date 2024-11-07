@@ -64,7 +64,7 @@ if(! isset($_SESSION['user'])) {
                <div class="sidebar_blog_2">
                   <h4>General</h4>
                   <ul class="list-unstyled components">
-                     <li class="active">
+                     <li class="<?php echo (isset($_GET['page']) && $_GET['page'] == 'kategori') ? 'active' : ''; ?>">
                         <a href="index.php"  aria-expanded="false"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
                      </li>
                      <?php

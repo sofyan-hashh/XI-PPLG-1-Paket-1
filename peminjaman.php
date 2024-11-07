@@ -43,8 +43,8 @@
                                              <?php
                                                 if($data['status_peminjaman'] != 'dikembalikan') {
                                                    ?>
-                                                <a class="btn cur-p btn-secondary" href="?page=fungsi/ubah_peminjaman&&id=<?php echo $data['id_peminjam']; ?>">Ubah</a>
-                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn cur-p btn-danger" href="?page=fungsi/hapus_peminjaman&&id=<?php echo $data['id_peminjam']; ?>">Hapus</a>
+                                                <a class="btn btn-info fa fa-edit" href="?page=fungsi/ubah_peminjaman&&id=<?php echo $data['id_peminjam']; ?>"></a>
+                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn btn-danger fa fa-trash" href="?page=fungsi/hapus_peminjaman&&id=<?php echo $data['id_peminjam']; ?>"></a>
                                                 <?php
                                                    }
                                                    ?>

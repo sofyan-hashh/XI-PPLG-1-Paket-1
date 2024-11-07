@@ -38,8 +38,8 @@
                                             <td><?php echo $data['ulasan']; ?></td>
                                             <td><?php echo $data['rating']; ?></td>
                                             <td>
-                                                <a class="btn cur-p btn-secondary" href="?page=fungsi/ubah_ulasan&&id=<?php echo $data['id_ulasan']; ?>">Ubah</a>
-                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn cur-p btn-danger" href="?page=fungsi/hapus_ulasan&&id=<?php echo $data['id_ulasan']; ?>">Hapus</a>
+                                                <a class="btn btn-info fa fa-edit" href="?page=fungsi/ubah_ulasan&&id=<?php echo $data['id_ulasan']; ?>"></a>
+                                                <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn btn-danger fa fa-trash" href="?page=fungsi/hapus_ulasan&&id=<?php echo $data['id_ulasan']; ?>"></a>
                                             </td>
                                           </tr>
                                           <?php
