@@ -58,7 +58,6 @@
                                 <div class="col-md-8">
                                     <select name="status_peminjaman" class="form-control">
                                         <option value="dipinjam" <?php if($data['status_peminjaman'] == ['dipinjam']) echo 'selected'; ?>>Dipinjam</option>
-                                        <option value="dikembalikan" <?php if($data['status_peminjaman'] == ['dikembalikan']) echo 'selected'; ?>>Dikembalikan</option>
                                     </select>
                                 </div>
                             </div>
