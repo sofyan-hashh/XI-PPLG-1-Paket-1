@@ -82,6 +82,9 @@ if(! isset($_SESSION['user'])) {
                      <li class="active">
                         <a href="?page=peminjaman"  aria-expanded="false"><i class="fa fa-money green_color"></i> <span>Peminjaman</span></a>
                      </li>
+                     <li class="active">
+                        <a href="?page=pengembalian"  aria-expanded="false"><i class="fa fa-money red_color"></i> <span>Pengembalian</span></a>
+                     </li>
                      <?php
                      }
                      ?>

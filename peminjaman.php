@@ -23,6 +23,7 @@
                                              <th>Tanggal Peminjaman</th>
                                              <th>Tanggal Pengembalian</th>
                                              <th>Status Peminjaman</th>
+                                             <th>Denda</th>
                                              <th>Aksi</th>
                                           </tr>
                                        </thead>
@@ -39,6 +40,7 @@
                                             <td><?php echo $data['tanggal_peminjaman']; ?></td>
                                             <td><?php echo $data['tanggal_pengembalian']; ?></td>
                                             <td><?php echo $data['status_peminjaman']; ?></td>
+                                            <td><?php echo $data['denda']; ?></td>
                                             <td>
                                              <?php
                                                 if($data['status_peminjaman'] != 'dikembalikan') {
