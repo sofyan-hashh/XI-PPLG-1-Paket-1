@@ -13,8 +13,7 @@
                             $penulis = $_POST['penulis'];
                             $penerbit = $_POST['penerbit'];
                             $tahun_terbit = $_POST['tahun_terbit'];
-                            $deskripsi = $_POST['deskripsi'];
-                            $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi) VALUES('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi')");
+                            $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori,judul,penulis,penerbit,tahun_terbit,) VALUES('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$')");
 
                             if($query) {
                                 echo '<script>alert("Oke sip.");</script>';
@@ -53,10 +52,6 @@
                     <div class="row mb-3">
                         <div class="col-md-2">Tahun Terbit</div>
                         <div class="col-md-8"><input type="text" class="form-control" name="tahun_terbit"></div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-2">Deskripsi</div>
-                        <div class="col-md-8"><textarea name="deskripsi" rows="5" class="form-control"></textarea></div>
                     </div>
                     <div class="row">
                         <div class="col-md-2"></div>

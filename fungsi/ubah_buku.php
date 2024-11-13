@@ -14,8 +14,7 @@
                             $penulis = $_POST['penulis'];
                             $penerbit = $_POST['penerbit'];
                             $tahun_terbit = $_POST['tahun_terbit'];
-                            $deskripsi = $_POST['deskripsi'];
-                            $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit', deskripsi='$deskripsi' WHERE id_buku=$id");
+                            $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit' WHERE id_buku=$id");
 
                             if($query) {
                                 echo '<script>alert("Oke sip.");</script>';
