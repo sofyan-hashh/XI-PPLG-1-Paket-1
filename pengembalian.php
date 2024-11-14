@@ -13,10 +13,10 @@ $result = $koneksi->query($sql);
     <div class="card-body">
         <div class="row">
             <div class="col-md-12">
-                <form action="pengembalian_buku.php" method="post">
+                <form action="fungsi/pengembalian_buku.php" method="post">
                     <div class="row mb-3">
                         <div class="col-md-2">Buku yang dipinjam</div>
-                        <div class="col-md-8"><select class="form-select" name="id_peminjam" id="id_peminjam">
+                        <div class="col-md-8"><select class="form-control" name="id_peminjam" id="id_peminjam">
                                 <?php
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<option value='" . $row['id_peminjam'] . "'>" . $row['judul'] . "</option>";
@@ -25,23 +25,13 @@ $result = $koneksi->query($sql);
                             </select></div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-md-2">Tanggal Kembali</div>
-                        <div class="col-md-8"><input class="form-control" type="date" name="tanggal_kembali" required></div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-2">Penerbit</div>
-                        <div class="col-md-8"><input type="text" class="form-control" name="penerbit"></div>
-                    </div>
-                    <div class="row mb-3">
                         <div class="col-md-2">Tahun Terbit</div>
-                        <div class="col-md-8"><input type="text" class="form-control" name="tahun_terbit"></div>
+                        <div class="col-md-8"><input class="form-control" type="date" name="tanggal_kembali" required></div>
                     </div>
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <button type="submit" class="btn btn-primary" name="submit" value="submit">Simpan</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                            <a href="?page=buku" class="btn btn-danger">Kembali</a>
+                            <button type="submit" class="btn btn-primary" name="submit" value="submit">Kembali Buku</button>
                         </div>
                     </div>
                 </form>

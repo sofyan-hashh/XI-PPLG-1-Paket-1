@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2024 at 09:40 AM
+-- Generation Time: Nov 14, 2024 at 03:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -33,16 +33,16 @@ CREATE TABLE `buku` (
   `judul` varchar(255) DEFAULT NULL,
   `penulis` varchar(255) DEFAULT NULL,
   `penerbit` varchar(255) DEFAULT NULL,
-  `tahun_terbit` varchar(255) DEFAULT NULL,
-  `deskripsi` text DEFAULT NULL
+  `tahun_terbit` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `buku`
 --
 
-INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul`, `penulis`, `penerbit`, `tahun_terbit`, `deskripsi`) VALUES
-(1, 1, 'Naruto Shipuden', 'Masashi Kishimoto', 'Shonen Jump', '2001', 'Buku tentang petualangan naruto uzumaki');
+INSERT INTO `buku` (`id_buku`, `id_kategori`, `judul`, `penulis`, `penerbit`, `tahun_terbit`) VALUES
+(1, 1, 'Naruto Shipuden', 'Masashi Kishimoto', 'Shonen Jump', '2001'),
+(2, 3, 'Informatika', 'Ahmad Sanurdin', 'Gramedia', '2001');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,9 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
-(1, 'Komik');
+(1, 'Komik'),
+(2, 'Dongeng'),
+(3, 'Buku Belajar');
 
 -- --------------------------------------------------------
 
@@ -75,16 +77,21 @@ CREATE TABLE `peminjaman` (
   `tanggal_peminjaman` date DEFAULT NULL,
   `tanggal_pengembalian` date DEFAULT NULL,
   `tanggal_kembali` date DEFAULT NULL,
-  `status_peminjaman` enum('dipinjam','dikembalikan') DEFAULT NULL
+  `status_peminjaman` enum('dipinjam','dikembalikan','denda','batal') DEFAULT 'dipinjam',
+  `denda` decimal(10,2) DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `peminjaman`
 --
 
-INSERT INTO `peminjaman` (`id_peminjam`, `id_user`, `id_buku`, `tanggal_peminjaman`, `tanggal_pengembalian`, `tanggal_kembali`, `status_peminjaman`) VALUES
-(1, 3, 1, '2024-11-12', '2024-12-12', NULL, 'dipinjam'),
-(2, 3, 1, '2024-11-12', '2024-12-08', NULL, 'dikembalikan');
+INSERT INTO `peminjaman` (`id_peminjam`, `id_user`, `id_buku`, `tanggal_peminjaman`, `tanggal_pengembalian`, `tanggal_kembali`, `status_peminjaman`, `denda`) VALUES
+(9, 3, 1, '2024-11-13', '2024-11-14', '2024-11-30', 'dikembalikan', 16000.00),
+(10, 3, 1, '2024-11-13', '2024-11-30', '2024-11-29', 'dikembalikan', 0.00),
+(11, 3, 1, '2024-11-13', '2024-11-28', '2024-11-23', 'dikembalikan', 0.00),
+(12, 3, 1, '2024-11-13', '2024-11-21', '2025-02-11', 'dikembalikan', 82000.00),
+(13, 8, 2, '2024-11-15', '2024-11-22', '2024-11-30', 'dikembalikan', 8000.00),
+(14, 8, 2, '2024-11-16', '2024-12-26', '2026-12-17', 'dikembalikan', 7210000.00);
 
 -- --------------------------------------------------------
 
@@ -122,12 +129,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `email`, `alamat`, `no_telepon`, `level`) VALUES
-(1, 'Administrator', 'admin', '202cb962ac59075b964b07152d234b70', 'admin@gmail.com', 'Japura Bakti', '089534568721', 'admin'),
 (2, 'Petugas Perpus', 'petugas', '698d51a19d8a121ce581499d7b701668', 'petugas@gmail.com', 'Japura Lor', '089676547890', 'petugas'),
 (3, 'Peminjam', 'peminjam', 'bcbe3365e6ac95ea2c0343a2395834dd', 'peminjam@gmail.com', 'Japura Kidul', '089123456786', 'peminjam'),
-(4, 'admin2', 'admin2', '310dcbbf4cce62f762a2aaa148d556bd', 'riya@gmail.com', 'Astana Japura', '083141260703', 'admin'),
-(5, 'adam', 'adam', '202cb962ac59075b964b07152d234b70', 'riya@gmail.com', 'Astana Japura', '083141260703', 'admin'),
-(6, 'Swift', 'sof', 'c8837b23ff8aaa8a2dde915473ce0991', 'ngodingsekarepe@gmail.com', 'Cipeujeuh Kulon', '089785343647', 'admin');
+(6, 'Swift', 'sof', 'c8837b23ff8aaa8a2dde915473ce0991', 'ngodingsekarepe@gmail.com', 'Cipeujeuh Kulon', '089785343647', 'admin'),
+(8, 'Ubaidillah As-syakir', 'bay', '698d51a19d8a121ce581499d7b701668', 'ubed@gmail.com', 'Jepura', '089656783452', 'peminjam');
 
 --
 -- Indexes for dumped tables
@@ -175,19 +180,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_peminjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
@@ -199,7 +204,7 @@ ALTER TABLE `ulasan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

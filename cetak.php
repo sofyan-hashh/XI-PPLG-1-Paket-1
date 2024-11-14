@@ -7,6 +7,7 @@
                                              <th>Tanggal Peminjaman</th>
                                              <th>Tanggal Pengembalian</th>
                                              <th>Status Peminjaman</th>
+                                             <th>Denda</th>
                                           </tr>
                                             <?php
                                             include "koneksi.php";
@@ -21,6 +22,7 @@
                                             <td><?php echo $data['tanggal_peminjaman']; ?></td>
                                             <td><?php echo $data['tanggal_pengembalian']; ?></td>
                                             <td><?php echo $data['status_peminjaman']; ?></td>
+                                            <td><?php echo $data['denda']; ?></td>
                                           </tr>
                                                 <?php
                                             }
