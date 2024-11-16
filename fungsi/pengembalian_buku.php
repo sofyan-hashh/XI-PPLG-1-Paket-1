@@ -26,7 +26,7 @@ if ($tanggal_kembali > $tanggal_pengembalian) {
     $selisih_hari = ($tanggal_kembali_timestamp - $tanggal_pengembalian_timestamp) / (60 * 60 * 24);
 
     // Denda per hari
-    $denda_per_hari = 10000;
+    $denda_per_hari = 1000;
     $denda = $selisih_hari * $denda_per_hari;
 }
 

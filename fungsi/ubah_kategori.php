@@ -10,12 +10,20 @@
                         $id = $_GET['id'];
                         if(isset($_POST['submit']) ) {
                             $kategori = $_POST['kategori'];
-                            $query = mysqli_query($koneksi, "UPDATE kategori SET kategori='$kategori' WHERE id_kategori=$id");
+                            $query = mysqli_query($koneksi, "UPDATE kategori SET kategori   ='$kategori' WHERE id_kategori=$id");
 
                             if($query) {
-                                echo '<script>alert("Ubah data berhasil."); location.href="?page=kategori";</script>';
+                                echo '<script>Swal.fire({
+                                title: "Good job!",
+                                text: "Ubah Kategori Berhasil :)",
+                                icon: "success"
+                                });</script>';
                             }else{
-                                echo '<script>alert("Ubah data gagal.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Oops...",
+                                text: "Ubah Kategori Gagal :(",
+                                icon: "error"
+                                });</script>';
                             }
                         }
                         $query = mysqli_query($koneksi, "SELECT * FROM kategori WHERE id_kategori=$id");

@@ -12,9 +12,17 @@
                             $query = mysqli_query($koneksi, "INSERT INTO kategori(kategori) VALUES('$kategori')");
 
                             if($query) {
-                                echo '<script>alert("Oke sip.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Good job!",
+                                text: "Tambah Kategori Berhasil :)",
+                                icon: "success"
+                                });</script>';
                             }else{
-                                echo '<script>alert("Ulangi.");</script>';
+                                echo '<script>Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Tambah Kategori Gagal :("
+                                });</script>';
                             }
                         }
 

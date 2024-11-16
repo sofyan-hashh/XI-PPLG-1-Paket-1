@@ -23,7 +23,7 @@ require 'fungsi/koneksi.php';
                             $username = $_POST['username'];
                             $password = md5($_POST['password']);
                             
-                            $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' and password='$password'");
+                            $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
                             $cek = mysqli_num_rows($data);
                             if($cek > 0) {
                                 $_SESSION['user'] = mysqli_fetch_array($data);
@@ -43,7 +43,7 @@ require 'fungsi/koneksi.php';
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" name="password" placeholder="password...">
                         </div>
-                        <button type="submit"name="login" value="login" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" name="login" value="login" class="btn btn-primary w-100">Login</button>
                     </form>
                     <div class="text-center mt-3">
                         <p>Belum punya akun?<a href="register.php">Daftar disini</a></p>

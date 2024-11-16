@@ -16,9 +16,17 @@
                                     $query = mysqli_query($koneksi, "INSERT INTO peminjaman(id_buku, id_user, tanggal_peminjaman, tanggal_pengembalian, status_peminjaman) VALUES('$id_buku', '$id_user', '$tanggal_peminjaman', '$tanggal_pengembalian', '$status_peminjaman')");
 
                                     if ($query) {
-                                        echo '<script>alert("Oke sip.");</script>';
+                                        echo '<script>Swal.fire({
+                                        title: "Good job!",
+                                        text: "Pinjam Buku Berhasil :)",
+                                        icon: "success"
+                                        });</script>';
                                     } else {
-                                        echo '<script>alert("Ulangi.");</script>';
+                                        echo '<script>Swal.fire({
+                                        title: "Oops...",
+                                        text: "Pinjam Buku Gagal :(",
+                                        icon: "error"
+                                        });</script>';
                                     }
                                 }
                             ?>

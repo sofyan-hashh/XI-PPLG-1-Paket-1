@@ -10,7 +10,7 @@
                                              <th>Denda</th>
                                           </tr>
                                             <?php
-                                            include "koneksi.php";
+                                            include 'fungsi/koneksi.php';
                                             $i =1;
                                                 $query = mysqli_query($koneksi, "SELECT * FROM peminjaman LEFT JOIN user on user.id_user = peminjaman.id_user LEFT JOIN buku on buku.id_buku = peminjaman.id_buku");
                                                 while($data = mysqli_fetch_array($query)) {

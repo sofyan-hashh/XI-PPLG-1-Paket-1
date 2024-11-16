@@ -17,9 +17,17 @@
                             $query = mysqli_query($koneksi, "UPDATE buku SET id_kategori='$id_kategori', judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun_terbit='$tahun_terbit' WHERE id_buku=$id");
 
                             if($query) {
-                                echo '<script>alert("Oke sip.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Good job!",
+                                text: "Ubah Buku Berhasil :)",
+                                icon: "success"
+                                });</script>';
                             }else{
-                                echo '<script>alert("Ulangi.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Ooppss!",
+                                text: "Ubah Buku Gagal :)",
+                                icon: "error"
+                                });</script>';
                             }
                         }
                         $query = mysqli_query($koneksi, "SELECT * FROM buku WHERE id_buku=$id");
@@ -55,10 +63,6 @@
                     <div class="row mb-3">
                         <div class="col-md-2">Tahun Terbit</div>
                         <div class="col-md-8"><input type="text" value="<?php echo $data['tahun_terbit']; ?>" class="form-control" name="tahun_terbit"></div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-2">Deskripsi</div>
-                        <div class="col-md-8"><textarea name="deskripsi" rows="5" class="form-control"><?php echo $data['deskripsi']; ?></textarea></div>
                     </div>
                     <div class="row">
                         <div class="col-md-2"></div>

@@ -15,9 +15,17 @@
                             $query = mysqli_query($koneksi, "INSERT INTO ulasan(id_buku,id_user,ulasan,rating) VALUES('$id_buku', '$id_user', '$ulasan', '$rating')");
 
                             if($query) {
-                                echo '<script>alert("Oke sip.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Good job!",
+                                text: "Tambah Ulasan Berhasil :)",
+                                icon: "success"
+                                });</script>';
                             }else{
-                                echo '<script>alert("Ulangi.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Ooppss!",
+                                text: "Tambah Ulasan Gagal :)",
+                                icon: "error"
+                                });</script>';
                             }
                         }
 

@@ -33,7 +33,8 @@ if(! isset($_SESSION['user'])) {
       <!-- scrollbar css -->
       <link rel="stylesheet" href="aset/css/perfect-scrollbar.css" />
       <!-- custom css -->
-      <link rel="stylesheet" href="aset/css/custom.css" />
+      <link rel="stylesheet" href="aset/css/custom.css" />   
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -184,5 +185,5 @@ if(! isset($_SESSION['user'])) {
       <!-- custom js -->
       <script src="aset/js/custom.js"></script>
       <script src="aset/js/chart_custom_style1.js"></script>
-   </body>
+     </body>
 </html>

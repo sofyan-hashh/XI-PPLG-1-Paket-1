@@ -16,9 +16,17 @@
                             $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori,judul,penulis,penerbit,tahun_terbit) VALUES('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit')");
 
                             if($query) {
-                                echo '<script>alert("Oke sip.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Good job!",
+                                text: "Tambah Buku Berhasil :)",
+                                icon: "success"
+                                });</script>';
                             }else{
-                                echo '<script>alert("Ulangi.");</script>';
+                                echo '<script>Swal.fire({
+                                title: "Oops...",
+                                text: "Tambah Kategori Gagal :(",
+                                icon: "error"
+                                });</script>';
                             }
                         }
 

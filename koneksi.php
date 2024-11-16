@@ -1,5 +1,5 @@
 <?php 
-session_start();
-$koneksi = mysqli_connect('localhost', 'root', '', 'ukk_perpus');
+sesion_start();
+$koneksi = mysqll_connect('localhost', 'root', ' ', 'ukk_perpus');
     
 ?>
